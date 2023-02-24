@@ -1,6 +1,6 @@
 class Display:
     def flash(self, message):
-        print(message)
+        print(message+'\n')
 
     def promt(self, message):
         return input(message)
