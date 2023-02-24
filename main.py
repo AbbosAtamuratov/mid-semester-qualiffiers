@@ -1,18 +1,18 @@
 from View.Display import Display
 from Database.DataBase import Database
+from FileManager.JSONfileManager import JSONfileManager
 
 d1 = Display()
 db = Database(d1)
 
-for i in range(4):
-    print('let\'s create some notes...')
-    db.create()
-print('ok, testing features...\n')
+print('ok, testing loading json...\n')
 
-db.delete(3)
-db.find(3)
-db.find(2)
-db.update(1)
+# for i in range(3):
+#     db.create()
 
-print('all notes\n')
+jfm = JSONfileManager()
+
+# jfm.save(db.notepad)
+
+db.notepad=jfm.load()
 db.list()

@@ -16,6 +16,10 @@ class Database:
     def notepad(self):
         return self._notepad
 
+    @notepad.setter
+    def notepad(self, notes):
+        self._notepad = notes
+
     def create(self):
         inp_title = self.display.promt('Input your title: ')
         inp_text = self.display.promt('Input your text: ')
@@ -36,7 +40,7 @@ class Database:
                     note.text = self.display.promt('Input new text: ')
                     note.timestamp = datetime.now()
         else:
-            self.display.flash('Sorry! id not found')
+            self.display.flash('Sorry! id is not found')
 
     def delete(self, id):
         id_list = [note.id for note in self._notepad]
@@ -48,7 +52,7 @@ class Database:
                 index += 1
             self._notepad.pop(target)
         else:
-            self.display.flash('Sorry! id not found')
+            self.display.flash('Sorry! id is not found')
 
     def find(self, id):
         id_list = [note.id for note in self._notepad]
@@ -60,7 +64,7 @@ class Database:
                 index += 1
             self._display.flash(str(self._notepad[target]))
         else:
-            self.display.flash('Sorry! id not found')
+            self.display.flash('Sorry! id is not found')
 
     def list(self):
         self._display.show_all(self._notepad)
