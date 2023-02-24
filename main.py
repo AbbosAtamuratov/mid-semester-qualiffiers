@@ -1,19 +1,19 @@
 from View.Display import Display
 from Database.DataBase import Database
-from FileManager.CSVfileManager import CSVfileManager
+from FileManager.XMLfileManager import XMLfileManager
 
 d1 = Display()
 db = Database(d1)
 
-print('ok, testing loading csv...\n')
-# print('ok, testing saving csv...\n')
+print('ok, testing loading xml...\n')
+# print('ok, testing saving xml...\n')
 
-# for i in range(3):
+# for i in range(4):
 #     db.create()
 
-cfm = CSVfileManager()
+xfm = XMLfileManager()
 
-# cfm.save(db.notepad)
+# xfm.save(db.notepad)
 
-db.notepad=cfm.load()
+db.notepad=xfm.load()
 db.list()

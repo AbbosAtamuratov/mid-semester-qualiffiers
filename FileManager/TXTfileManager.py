@@ -1,6 +1,5 @@
 from FileManager.FileManager import FileManager
 from Model.Note import Note
-from datetime import datetime
 
 class TXTfileManager(FileManager):
 

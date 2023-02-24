@@ -1,6 +1,5 @@
 from FileManager.FileManager import FileManager
 from Model.Note import *
-from datetime import datetime
 import json
 
 class JSONfileManager(FileManager):
