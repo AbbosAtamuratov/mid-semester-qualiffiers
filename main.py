@@ -1,18 +1,19 @@
 from View.Display import Display
 from Database.DataBase import Database
-from FileManager.JSONfileManager import JSONfileManager
+from FileManager.CSVfileManager import CSVfileManager
 
 d1 = Display()
 db = Database(d1)
 
-print('ok, testing loading json...\n')
+print('ok, testing loading csv...\n')
+# print('ok, testing saving csv...\n')
 
 # for i in range(3):
 #     db.create()
 
-jfm = JSONfileManager()
+cfm = CSVfileManager()
 
-# jfm.save(db.notepad)
+# cfm.save(db.notepad)
 
-db.notepad=jfm.load()
+db.notepad=cfm.load()
 db.list()

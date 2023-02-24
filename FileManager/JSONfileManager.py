@@ -9,7 +9,7 @@ class JSONfileManager(FileManager):
         super().__init__('notes.json')
 
     def save(self, notepad):
-        json_string = json.dumps([note.__dict__ for note in notepad], indent=4, cls=NoteEncoder)
+        json_string = json.dumps([note.__dict__ for note in notepad], indent=4)
         with open(self.file_name, 'w') as json_file:
             json_file.write(json_string)
 
@@ -21,6 +21,6 @@ class JSONfileManager(FileManager):
         for dict_note in json_dicts:
             note = Note(dict_note['title'], dict_note['text'])
             note._id = int(dict_note['_id'])
-            note.timestamp = datetime.fromisoformat(dict_note['timestamp'])
+            note.timestamp = dict_note['timestamp']
             notepad.append(note)
         return notepad

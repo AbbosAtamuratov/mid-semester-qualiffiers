@@ -10,7 +10,7 @@ class TXTfileManager(FileManager):
     def save(self, notepad):
         with open(self.file_name, 'w') as txt_file:
             for note in notepad:
-                line = f'{note.id} :: {note.timestamp.strftime("%H:%M:%S %d-%m-%Y")} ' \
+                line = f'{note.id} :: {note.timestamp} ' \
                        f':: {note.title} :: {note.text}'
                 txt_file.write(line+'\n')
 
@@ -22,6 +22,6 @@ class TXTfileManager(FileManager):
                contents = [c.strip() for c in contents]
                note_element = Note(contents[2], contents[3])
                note_element.id = contents[0]
-               note_element.timestamp = datetime.strptime(contents[1], "%H:%M:%S %d-%m-%Y")
+               note_element.timestamp = contents[1]
                notes.append(note_element)
         return notes

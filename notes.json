@@ -1,0 +1,20 @@
+[
+    {
+        "title": "comparisons",
+        "text": "My wife always compares me with Ryan Goseling. She always says \"You are nothing like Ryan Goseling!\"",
+        "_id": 1,
+        "timestamp": "20:19:47 24-02-2023"
+    },
+    {
+        "title": "music tastes",
+        "text": "Two wind generators standing in the field and talking. One goes \"Dude, what kind of music you like?\" and the other goes: \"You know, I'm a big metal fan...\"",
+        "_id": 2,
+        "timestamp": "20:19:50 24-02-2023"
+    },
+    {
+        "title": "about cultists",
+        "text": "Have heard about dyslexic Devil worshipers? They sold their souls to Santa",
+        "_id": 3,
+        "timestamp": "20:19:53 24-02-2023"
+    }
+]
