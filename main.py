@@ -5,15 +5,8 @@ from FileManager.XMLfileManager import XMLfileManager
 d1 = Display()
 db = Database(d1)
 
-print('ok, testing loading xml...\n')
-# print('ok, testing saving xml...\n')
 
-# for i in range(4):
-#     db.create()
+fm = XMLfileManager()
 
-xfm = XMLfileManager()
-
-# xfm.save(db.notepad)
-
-db.notepad=xfm.load()
+db.notepad=fm.load()
 db.list()

@@ -1,5 +1,4 @@
 from datetime import *
-import json
 class Note:
 
     def __init__(self, title, text):

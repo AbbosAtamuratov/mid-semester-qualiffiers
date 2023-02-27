@@ -21,6 +21,9 @@ class Display:
         for i, com in enumerate(com_list, start = 1):
             print(f'{i}. {com}')
 
+    def oopsie(self):
+        print('Something went wrong... Awkward...')
+
     def format_picker(self):
         inp_value = input('Choose file format:').lower()
         formats = ['txt', 'json', 'csv', 'xml']

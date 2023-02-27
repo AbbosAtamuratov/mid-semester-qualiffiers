@@ -54,7 +54,7 @@ class Database:
         else:
             self.display.flash('Sorry! id is not found')
 
-    def find(self, id):
+    def find_by_id(self, id):
         id_list = [note.id for note in self._notepad]
         if int(id) in id_list:
             index = 0
@@ -65,6 +65,9 @@ class Database:
             self._display.flash(str(self._notepad[target]))
         else:
             self.display.flash('Sorry! id is not found')
+
+    # def find_by_date(self, date):
+
 
     def list(self):
         self._display.show_all(self._notepad)
