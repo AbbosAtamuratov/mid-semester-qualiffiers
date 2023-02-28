@@ -1,6 +1,6 @@
 class Display:
     def flash(self, message):
-        print(message+'\n')
+        print(f'{message}\n')
 
     def promt(self, message):
         return input(message)
@@ -15,8 +15,8 @@ class Display:
         print_notes = lambda lst: [print(str(n)) for n in lst]
         print_notes(note_list)
 
-    def commands(self):
-        com_list = ['create', 'update', 'delete', 'find', 'list', 'exit']
+    def show_menu(self):
+        com_list = ['create', 'update', 'delete', 'list', 'find by id', 'find by date', 'exit']
         print('Command list:')
         for i, com in enumerate(com_list, start = 1):
             print(f'{i}. {com}')
@@ -39,4 +39,4 @@ class Display:
             return 4
         else:
             print('Error: Incorrect input value')
-            return 'Incorrect input'
+            return -1

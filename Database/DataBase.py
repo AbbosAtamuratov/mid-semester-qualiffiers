@@ -4,8 +4,8 @@ from View.Display import Display
 
 
 class Database:
-    def __init__(self, display):
-        self._display = display
+    def __init__(self):
+        self._display = Display()
         self._notepad = []
 
     @property
@@ -58,16 +58,28 @@ class Database:
         id_list = [note.id for note in self._notepad]
         if int(id) in id_list:
             index = 0
-            for note in self._notepad:
+            for note in self.notepad:
                 if note.id == id:
                     target = index
                 index += 1
-            self._display.flash(str(self._notepad[target]))
+            self._display.flash(str(self.notepad[target]))
         else:
             self.display.flash('Sorry! id is not found')
 
-    # def find_by_date(self, date):
-
+    def find_by_date(self, date):
+        comparable_date = datetime.strptime(date, "%d-%m-%Y").date()
+        target = 0
+        index = 0
+        for note in self.notepad:
+            note_date = note.timestamp.split(' ')[1]
+            if datetime.strptime(note_date, "%d-%m-%Y").date() == comparable_date:
+                target = index
+            index += 1
+        if target != 0:
+            self.display.flash(self.notepad[target])
+        else:
+            self.display.oopsie()
+            self.display.flash('Notes on that date are not found')
 
     def list(self):
         self._display.show_all(self._notepad)
