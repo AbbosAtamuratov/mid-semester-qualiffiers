@@ -25,10 +25,10 @@ class Display:
         print('Something went wrong... Awkward...')
 
     def format_picker(self):
-        inp_value = input('Choose file format:').lower()
         formats = ['txt', 'json', 'csv', 'xml']
         for i, fmt in enumerate(formats, start = 1):
             print(f'{i}. {fmt}')
+        inp_value = input('Choose file format: ').lower()
         if inp_value == '1' or 'txt':
             return 1
         elif inp_value == '2' or 'json':
